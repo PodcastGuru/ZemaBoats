@@ -48,6 +48,19 @@ function openPopup() {
    
     popup.style.zIndex = "9999";
 
+    var loader = document.createElement("div");
+    loader.style.position = "absolute";
+    loader.style.top = "40%";
+    loader.style.left = "40%";
+    loader.style.transform = "translate(-50%, -50%)";
+    loader.style.border = "8px solid #f3f3f3";
+    loader.style.borderRadius = "50%";
+    loader.style.borderTop = "8px solid #3498db";
+    loader.style.width = "60px";
+    loader.style.height = "60px";
+    loader.style.animation = "spin 2s linear infinite";
+    popup.appendChild(loader);
+
     var iframe = document.createElement("iframe");
     iframe.style.minWidth = "200px";
     iframe.style.width = "100%"
@@ -106,4 +119,14 @@ const credValue = scriptElement.getAttribute("cred");
 }
 
 button.addEventListener("click", openPopup);
+
+// CSS for loader
+var style = document.createElement('style');
+style.innerHTML = `
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}`;
+document.head.appendChild(style);
+
 
