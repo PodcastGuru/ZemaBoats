@@ -1,3 +1,4 @@
+//try
 var button = document.createElement("button");
 // button.innerText = "Open Popup";
 
@@ -46,11 +47,12 @@ function openPopup() {
  popup.style.borderRadius = "20px";
    
     popup.style.zIndex = "9999";
-
+  
+  
     var loader = document.createElement("div");
     loader.style.position = "absolute";
-    loader.style.top = "40%";
-    loader.style.left = "40%";
+    loader.style.top = "50%";
+    loader.style.left = "50%";
     loader.style.transform = "translate(-50%, -50%)";
     loader.style.border = "8px solid #f3f3f3";
     loader.style.borderRadius = "50%";
@@ -58,7 +60,9 @@ function openPopup() {
     loader.style.width = "60px";
     loader.style.height = "60px";
     loader.style.animation = "spin 2s linear infinite";
+
     popup.appendChild(loader);
+
 
     var iframe = document.createElement("iframe");
     iframe.style.minWidth = "200px";
@@ -119,7 +123,7 @@ const credValue = scriptElement.getAttribute("cred");
 
 button.addEventListener("click", openPopup);
 
-// CSS for loader
+// CSS for loader animation
 var style = document.createElement('style');
 style.innerHTML = `
 @keyframes spin {
@@ -127,5 +131,3 @@ style.innerHTML = `
   100% { transform: rotate(360deg); }
 }`;
 document.head.appendChild(style);
-
-
